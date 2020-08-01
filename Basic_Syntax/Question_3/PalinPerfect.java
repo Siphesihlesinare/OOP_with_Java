@@ -1,23 +1,28 @@
-import java.util.Scanner; 
-public class ImperialMetric
-{ public static void main(String [] args)
-{ Scanner input = new Scanner(System.in); 
-int inches = 0; System.out.println("Enter the minimum number of feet (not less than 0):"); 
-int minimum = input.nextInt();
- System.out.println("Enter the maximum number of feet (not more than 30):");
-  int maximum = input.nextInt(); 
-  String ch = "|";
-   System.out.printf("%4s", ch); 
-   for (inches = 0; inches <= 11; inches++)
-   { System.out.printf("%5d", inches); 
-   System.out.print("\""); } System.out.println();
-    for (int feet = minimum; feet <= maximum; feet++)
-    { System.out.printf("%-3s", feet + "'");
-     System.out.printf("|");
-      for (int j = 0; j <= 11; j++)
-      { double metres = (feet * 12 + j) * 0.0254;
-System.out.printf("%6.3f", metres); }
- System.out.println();
-  }
-   }
-    }
+import java.util.Scanner;
+public class PalinPerfect{
+public static void main(String[] args){
+Scanner s = new Scanner(System.in);
+System.out.println("Enter the starting point N:");
+int min_point = s.nextInt();
+System.out.println("Enter the ending point M:");
+int max_point = s.nextInt();
+int reversedInt = 0;
+int div;
+float squared_num;
+System.out.println("The palindromic perfect squares are as follows:");
+for(int i = min_point+1;i<=max_point; i++) {
+div = i;
+while (div != 0) {
+reversedInt = reversedInt * 10 + div% 10;
+div = div / 10;
+}
+squared_num = (float)Math.sqrt(i);
+if (i==reversedInt){
+if ((float)(squared_num%1)==0){
+System.out.println(i);
+}
+}
+reversedInt = 0;
+}
+}
+}
